@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import ListContacts from './ListContacts'
 
 class App extends Component {
@@ -27,7 +29,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <ListContacts contacts={contacts} />
+        <ListContacts
+          onDeleteContact={this.removeContact}
+          contacts={this.state.contacts}
+        />
       </div>
     )
   }
